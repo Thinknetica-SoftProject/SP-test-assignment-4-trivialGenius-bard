@@ -16,13 +16,13 @@
 #
 ## Решение:
 require 'digest'
-M = 0
+m = 0
 input = gets.chomp
-hash = Digest::MD5.hexdigest (input + "#{M}")
+hash = Digest::MD5.hexdigest (input + "#{m}")
 while hash[0, 5] != "00000" do
-  M += 1
-  hash = Digest::MD5.hexdigest (input + "#{M}")
+  m += 1
+  hash = Digest::MD5.hexdigest (input + "#{m}")
   #puts M
   #puts hash[0, 5] != "00000"
 end
-puts M
+puts m
