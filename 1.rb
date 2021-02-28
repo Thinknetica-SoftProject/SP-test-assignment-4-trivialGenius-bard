@@ -20,7 +20,7 @@ f = 0
 for i in 0..data.length do
   if data[i] == '('
     f += 1
-  else
+  elsif data[i] == ')'
     f -= 1
   end
 end

@@ -22,20 +22,14 @@ for i in 0...boxes.length do
 end
 q = 0
 for i in 0...boxes.length do
-  l = boxes[i][0].to_i
-  w = boxes[i][0].to_i
-  h = boxes[i][0].to_i
-  boxes[i].each{|x|
-  x = x.to_i
-    if x<l
-      l = x
-      h = l
-    end
-    if x > w
-      w = x
-      h = w
-    end
-  }
-  q += 2*(w*l+w*h+l*h)+l*h
+  a = boxes[i][0].to_i
+  b = boxes[i][1].to_i
+  c = boxes[i][2].to_i
+  s1 = a*b
+  s2 = a*c
+  s3 = b*c
+  s = []
+  s.push(s1, s2, s3)
+  q += 2*(s1+s2+s3)+s.min
 end
 puts q
